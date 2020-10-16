@@ -1,0 +1,38 @@
+.auth__screen {
+  width: 100vw;
+  height: 100vh;
+  background-color: $terciary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 550px;
+  width: 650px;
+  background-color: $primary;
+  border-radius: 23px;
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.auth__changeAuth{
+    color: $secondary;
+     a{
+         text-decoration: none;
+         color: lighten($color: $secondary, $amount: 13);
+
+         &:hover{
+             text-decoration: underline;
+         }
+     }
+}
