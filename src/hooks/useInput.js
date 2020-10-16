@@ -10,6 +10,10 @@ export const useInput = (initialState = {}) => {
         })
     }
 
-    return [value, handleInputChange]
+    const reset = () => {
+        setvalue(initialState)
+    }
+
+    return [value, handleInputChange, reset]
 
 }
