@@ -15,6 +15,7 @@ const SignUpScreen = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     SignUpUser({username, email, password});
+    GetDataUser()
     reset();
   };
 

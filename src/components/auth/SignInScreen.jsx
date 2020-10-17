@@ -1,7 +1,7 @@
 import React from 'react'
 import { useInput } from '../../hooks/useInput';
 import Link from "next/link";
-import { SignInUser } from '../../services/auth.services';
+import { GetDataUser, SignInUser } from '../../services/auth.services';
 
 const SignInScreen = () => {
     const [value, handleChange, reset] = useInput({
@@ -14,6 +14,7 @@ const SignInScreen = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         SignInUser({email, password})
+        GetDataUser()
         reset();
       };
     
