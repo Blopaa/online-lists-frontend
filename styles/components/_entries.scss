@@ -1,0 +1,31 @@
+.entrie__container {
+  width: 350px;
+  height: 100px;
+  background-color: $secondary;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.entries__container {
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: $primary;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 10px;
+  }
+  overflow-y: scroll;
+}
+
+.entrie__listname{
+  padding-left: 20px;
+  font-size: 18px;
+  color: $primary;
+}
