@@ -1,7 +1,8 @@
 import React from "react";
 import { useInput } from "../../hooks/useInput";
 import Link from "next/link";
-import { SignUpUser } from "../../services/auth.services";
+import Router from "next/router"
+import { GetDataUser, SignUpUser } from "../../services/auth.services";
 
 const SignUpScreen = () => {
   const [value, handleChange, reset] = useInput({
@@ -17,6 +18,9 @@ const SignUpScreen = () => {
     SignUpUser({username, email, password});
     GetDataUser()
     reset();
+    setTimeout(() => {
+      Router.push("/");
+    },1500)
   };
 
   return (

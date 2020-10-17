@@ -1,9 +1,10 @@
-import SignUpScreen from "../src/components/auth/SignUpScreen";
-
+import React from 'react'
+import ListScreen from '../src/components/list/ListScreen'
 export default function Home() {
+
   return (
     <div>
-      higfdsd
+      <ListScreen/>
     </div>
   )
 }

@@ -13,7 +13,6 @@ const Navbar = () => {
       document.cookie = "auth-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
       Router.push('/signin')
   }
-
   return (
     <div className="navbar__container">
       <div>{name}</div>
