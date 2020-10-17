@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext} from "react";
 import { useInput } from "../../hooks/useInput";
 import Link from "next/link";
 import Router from "next/router"
 import { GetDataUser, SignInUser } from "../../services/auth.services";
+import LoadingContext from "../contexts/LoadingContext";
 
 const SignInScreen = () => {
+  const {loading, setLoading} = useContext(LoadingContext)
   const [value, handleChange, reset] = useInput({
     email: "",
     password: "",
@@ -13,13 +15,15 @@ const SignInScreen = () => {
   const { email, password } = value;
 
   const handleSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault();
     SignInUser({ email, password });
     GetDataUser();
     reset();
     setTimeout(() => {
+      setLoading(false)
       Router.push("/");
-    },1500)
+    },1200)
   };
 
   return (
@@ -29,7 +33,7 @@ const SignInScreen = () => {
           <h2 className="h2">Sign In</h2>
           <form className="auth__form" onSubmit={handleSubmit}>
             <input
-              className="input__auth"
+              className="input__default"
               type="text"
               value={email}
               onChange={handleChange}
@@ -38,7 +42,7 @@ const SignInScreen = () => {
               placeholder="email"
             />
             <input
-              className="input__auth"
+              className="input__default"
               type="password"
               value={password}
               onChange={handleChange}
@@ -46,9 +50,13 @@ const SignInScreen = () => {
               autoComplete="off"
               placeholder="password"
             />
-            <button className="buttons__auth-submit" type="submit">
+            {
+              !loading ?
+              <button className="buttons__auth-submit" type="submit">
               submit
-            </button>
+            </button> :
+            <div className="loading"></div>
+            }
           </form>
           <hr />
         </div>

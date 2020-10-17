@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useInput } from "../../hooks/useInput";
 import Link from "next/link";
 import Router from "next/router"
 import { GetDataUser, SignUpUser } from "../../services/auth.services";
+import LoadingContext from "../contexts/LoadingContext";
 
 const SignUpScreen = () => {
+  const {loading, setLoading} = useContext(LoadingContext)
   const [value, handleChange, reset] = useInput({
     username: "",
     email: "",
@@ -14,11 +16,13 @@ const SignUpScreen = () => {
   const { username, email, password } = value;
   
   const handleSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault();
     SignUpUser({username, email, password});
     GetDataUser()
     reset();
     setTimeout(() => {
+      setLoading(false)
       Router.push("/");
     },1500)
   };
@@ -30,7 +34,7 @@ const SignUpScreen = () => {
           <h2 className="h2">Sign Up</h2>
           <form className="auth__form" onSubmit={handleSubmit}>
             <input
-              className="input__auth"
+              className="input__default"
               type="text"
               value={username}
               onChange={handleChange}
@@ -39,7 +43,7 @@ const SignUpScreen = () => {
               placeholder="username"
             />
             <input
-              className="input__auth"
+              className="input__default"
               type="text"
               value={email}
               onChange={handleChange}
@@ -48,7 +52,7 @@ const SignUpScreen = () => {
               placeholder="email"
             />
             <input
-              className="input__auth"
+              className="input__default"
               type="password"
               value={password}
               onChange={handleChange}
@@ -56,9 +60,13 @@ const SignUpScreen = () => {
               autoComplete="off"
               placeholder="password"
             />
-            <button className="buttons__auth-submit" type="submit">
+            {
+              !loading ?
+              <button className="buttons__auth-submit" type="submit">
               submit
-            </button>
+            </button> :
+            <div className="loading"></div>
+            }
           </form>
           <hr />
         </div>
