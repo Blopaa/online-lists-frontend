@@ -1,10 +1,12 @@
 import React from 'react'
 import Entries from './Entries'
+import {IoMdAddCircle} from 'react-icons/io'
 
-const Sidebar = () => {
+const Sidebar = ({active}) => {
     return (
         <aside className="sidebar__container">
-            <p>Your Lists</p>
+            <p >Your lists</p>
+            <div className="sidebar__newEntrie pointer" onClick={() => active()}><IoMdAddCircle style={{fontSize:"30px"}}/></div>
             <Entries/>
         </aside>
     )

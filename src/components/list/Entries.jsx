@@ -1,21 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import EntrieCard from './EntrieCard'
+import React, { useContext, useEffect, useState } from "react";
+import ListsContext from "../contexts/ListsContext";
+import LoadingContext from "../contexts/LoadingContext";
+import EntrieCard from "./EntrieCard";
 
 const Entries = () => {
-  const [data, setData] = useState(undefined)
-    useEffect(() => {
-      const saved = localStorage.getItem("User")
-      const userData = JSON.parse(saved)
-      console.log(userData);
-      setData(userData)
-    }, [])
-    return (
+  const {lists, setLists} = useContext(ListsContext)
+  const { loading, setLoading } = useContext(LoadingContext);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1200);
+  }, []);
+  return (
+    <div>
+      {!loading ? (
         <div className="entries__container">
-            {data && data.listsAsAuthor.map(m => (
-                <EntrieCard key={m._id} name={m.name}/>
+          {lists && lists.listsAsAuthor &&
+            lists.listsAsAuthor.map((m) => (
+              <EntrieCard key={m._id} data={m} />
             ))}
         </div>
-    )
-}
+      ) : (
+        <div className="loading"></div>
+      )}
+    </div>
+  );
+};
 
-export default Entries
+export default Entries;

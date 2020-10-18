@@ -1,9 +1,12 @@
 import React from 'react'
 
-const EntrieCard = ({name}) => {
+const EntrieCard = ({data}) => {
+    const handleClick = () => {
+        console.log(data._id);
+    }
     return (
-        <div className="entrie__container">
-            <div className="entrie__listname">{name}</div>
+        <div onClick={handleClick} className="entrie__container">
+            <div className="entrie__listname">{data.name}</div>
         </div>
     )
 }
