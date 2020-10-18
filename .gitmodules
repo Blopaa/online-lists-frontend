@@ -1,0 +1,3 @@
+[submodule "online-list-backend"]
+	path = online-list-backend
+	url = https://github.com/Blopaa/online-list-backend.git
