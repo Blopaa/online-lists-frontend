@@ -4,8 +4,10 @@ import Link from "next/link";
 import Router from "next/router"
 import { GetDataUser, SignInUser } from "../../services/auth.services";
 import LoadingContext from "../contexts/LoadingContext";
+import ListsContext from "../contexts/ListsContext";
 
 const SignInScreen = () => {
+  const {lists, setLists} = useContext(ListsContext)
   const {loading, setLoading} = useContext(LoadingContext)
   const [value, handleChange, reset] = useInput({
     email: "",
@@ -17,12 +19,15 @@ const SignInScreen = () => {
   const handleSubmit = async (e) => {
     setLoading(true)
     e.preventDefault();
+    setLists(GetDataUser());
     SignInUser({ email, password });
-    GetDataUser();
+    setTimeout(() => {
+      useDataUser(setLists)
+    }, 1000)
     reset();
     setTimeout(() => {
       setLoading(false)
-      Router.push("/");
+      Router.replace("/");
     },1200)
   };
 

@@ -4,8 +4,10 @@ import Link from "next/link";
 import Router from "next/router"
 import { GetDataUser, SignUpUser } from "../../services/auth.services";
 import LoadingContext from "../contexts/LoadingContext";
+import ListsContext from "../contexts/ListsContext";
 
 const SignUpScreen = () => {
+  const {lists, setLists} = useContext(ListsContext)
   const {loading, setLoading} = useContext(LoadingContext)
   const [value, handleChange, reset] = useInput({
     username: "",
@@ -19,11 +21,13 @@ const SignUpScreen = () => {
     setLoading(true)
     e.preventDefault();
     SignUpUser({username, email, password});
-    GetDataUser()
     reset();
+      setTimeout(() => {
+        useDataUser(setLists)
+      }, 1000)
     setTimeout(() => {
       setLoading(false)
-      Router.push("/");
+      Router.replace("/");
     },1500)
   };
 
