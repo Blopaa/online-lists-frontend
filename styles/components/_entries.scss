@@ -9,6 +9,7 @@
 }
 
 .entries__container {
+  max-height: 50rem;
   &::-webkit-scrollbar {
     width: 1px;
   }

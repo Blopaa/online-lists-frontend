@@ -1,6 +1,6 @@
-.input__auth {
+.input__default {
   height: 70px;
-  width: 492px;
+  width: 30rem;
   border-radius: 10px;
   background-color: $secondary;
   border: none;
@@ -8,9 +8,9 @@
   transition: 0.2s ease-in-out;
     margin-bottom: 20px;
     font-size: 18px;
+    padding: 0px 20px;
 
   &::placeholder {
-    padding: 20px;
     color: darken($color: $secondary, $amount: 30);
   }
 

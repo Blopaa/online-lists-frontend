@@ -1,0 +1,29 @@
+.addListAlert {
+  &__screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+  }
+  &__background{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 21;
+    background-color: #fbf7f0;
+    width: 600px;
+    height: 355px;
+    border-radius: 25px;
+  }
+}

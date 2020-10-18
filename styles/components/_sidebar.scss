@@ -1,19 +1,31 @@
-.sidebar__container{
+.sidebar {
+  &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
     // padding-top: 90px;
-    z-index: 1;
     width: 400px;
     height: 100vh;
-    position: fixed;
     background-color: $primary;
 
-    p{
-        padding-top: 90px;
-        margin-bottom: 20px;
-        color: $secondary;
-        font-size: 18px;
-        margin-top: 20px;
+    p {
+      padding-top: 90px;
+      margin-bottom: 20px;
+      color: $secondary;
+      font-size: 18px;
+      margin-top: 20px;
     }
+  }
+  &__newEntrie {
+    color: $primary;
+    text-align: center;
+    width: 350px;
+    height: 50px;
+    background-color: $secondary;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

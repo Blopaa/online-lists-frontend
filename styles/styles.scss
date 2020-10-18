@@ -12,8 +12,12 @@
 @import './components/navbar';
 @import './components/sidebar';
 @import './components/entries';
+@import './components/nothing';
 
 //animations
-@import './animations/animations'
+@import './animations/animations';
+
+//alerts
+@import './alerts/addListAlert';
 
 
