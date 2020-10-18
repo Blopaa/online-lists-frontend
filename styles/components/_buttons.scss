@@ -1,6 +1,7 @@
-.buttons__auth-submit{
+.buttons{
+  &__auth-submit{
     height: 70px;
-    width: 492px;
+    width: 30rem;
     border-radius: 10px;
     background-color: lighten($color: $primary, $amount: 10);
     font-size: 18px;
@@ -19,4 +20,54 @@
       background-color: darken($color: $primary, $amount: 5);
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     }
+  }
+    
+  &__danger{
+    height: 70px;
+    width: 45%;
+    border-radius: 10px;
+    background-color: lighten($color: $advert, $amount: 10);
+    font-size: 18px;
+    color: $light;
+    border: none;
+    outline: none;
+    transition: 0.2s ease-in-out;
+      margin-bottom: 20px;
+  
+    &::placeholder {
+      padding: 20px;
+      color: darken($color: $advert, $amount: 30);
+    }
+  
+    &:hover {
+      background-color: darken($color: $advert, $amount: 5);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__success{
+    height: 70px;
+    width: 45%;
+    border-radius: 10px;
+    background-color: lighten($color: $primary, $amount: 10);
+    font-size: 18px;
+    color: $light;
+    border: none;
+    outline: none;
+    transition: 0.2s ease-in-out;
+      margin-bottom: 20px;
+  
+    &::placeholder {
+      padding: 20px;
+      color: darken($color: $primary, $amount: 30);
+    }
+  
+    &:hover {
+      background-color: darken($color: $primary, $amount: 5);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    }
+  }
 }
+
+
+

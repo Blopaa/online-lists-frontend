@@ -34,11 +34,11 @@ const AddListAlert = ({ active }) => {
             placeholder="list name..."
             className="input__default"
           />
-          <div>
-            <button type="button" onClick={() => active()}>
+          <div className="addListAlert__buttonContainer">
+            <button type="button" className="buttons__danger" onClick={() => active()}>
               cancel
             </button>
-            <button type="submit">create</button>
+            <button className="buttons__success" type="submit">create</button>
           </div>
         </form>
       </div>

@@ -21,9 +21,15 @@
     justify-content: center;
     align-items: center;
     z-index: 21;
-    background-color: #fbf7f0;
+    background-color: $light;
     width: 600px;
-    height: 355px;
+    height: 275px;
     border-radius: 25px;
+  }
+
+  &__buttonContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

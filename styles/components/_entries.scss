@@ -6,6 +6,13 @@
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.entrie__trash{
+  margin-right: 20px;
+  font-size: 20px;
+  color: $primary;
 }
 
 .entries__container {

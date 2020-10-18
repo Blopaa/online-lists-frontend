@@ -2,9 +2,10 @@ import React, { useContext} from "react";
 import { useInput } from "../../hooks/useInput";
 import Link from "next/link";
 import Router from "next/router"
-import { GetDataUser, SignInUser } from "../../services/auth.services";
+import { SignInUser } from "../../services/auth.services";
 import LoadingContext from "../contexts/LoadingContext";
 import ListsContext from "../contexts/ListsContext";
+import { useDataUser } from "../../helpers/UseDataUser";
 
 const SignInScreen = () => {
   const {lists, setLists} = useContext(ListsContext)
@@ -19,7 +20,6 @@ const SignInScreen = () => {
   const handleSubmit = async (e) => {
     setLoading(true)
     e.preventDefault();
-    setLists(GetDataUser());
     SignInUser({ email, password });
     setTimeout(() => {
       useDataUser(setLists)

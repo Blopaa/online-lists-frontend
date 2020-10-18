@@ -5,6 +5,7 @@ import Router from "next/router"
 import { GetDataUser, SignUpUser } from "../../services/auth.services";
 import LoadingContext from "../contexts/LoadingContext";
 import ListsContext from "../contexts/ListsContext";
+import { useDataUser } from "../../helpers/UseDataUser";
 
 const SignUpScreen = () => {
   const {lists, setLists} = useContext(ListsContext)
