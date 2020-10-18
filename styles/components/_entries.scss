@@ -9,7 +9,7 @@
   justify-content: space-between;
 }
 
-.entrie__trash{
+.entrie__trash {
   margin-right: 20px;
   font-size: 20px;
   color: $primary;
@@ -32,8 +32,45 @@
   overflow-y: scroll;
 }
 
-.entrie__listname{
+.entrie__listname {
   padding-left: 20px;
   font-size: 18px;
   color: $primary;
+}
+
+.entrie__screen {
+  color: $primary;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-color: $light;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+}
+.entrie__header {
+  margin-top: 90px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    margin: 50px;
+  }
+}
+
+.entrie__name {
+  font-size: 64px;
+}
+
+.entrie__addSomeone {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 320px;
+  height: 100px;
+  background-color: $primary;
+  color: $secondary;
 }

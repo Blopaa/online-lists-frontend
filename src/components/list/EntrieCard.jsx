@@ -1,25 +1,34 @@
-import React, { useContext } from 'react'
-import {FaTrash} from 'react-icons/fa'
-import { useDataUser } from '../../helpers/UseDataUser';
-import { deleteList } from '../../services/lists.services';
-import ListsContext from '../contexts/ListsContext';
+import React, { useContext } from "react";
+import { FaTrash } from "react-icons/fa";
+import { useDataUser } from "../../helpers/UseDataUser";
+import { deleteList } from "../../services/lists.services";
+import EntrieContext from "../contexts/EntrieContext";
+import ListsContext from "../contexts/ListsContext";
 
-const EntrieCard = ({data}) => {
-    const {setLists} = useContext(ListsContext)
-    const handleClick = () => {
-        console.log(data._id);
-    }
+const EntrieCard = ({ data }) => {
+  const { setLists } = useContext(ListsContext);
+  const { setEntrie } = useContext(EntrieContext);
+  const handleClick = () => {
+    setEntrie(data);
+  };
 
-    const handleDeleteList = () => {
-        deleteList(data._id)
-        useDataUser(setLists)
-    }
-    return (
-        <div onClick={handleClick} className="entrie__container">
-            <div className="entrie__listname">{data.name}</div>
-            <div className="entrie__trash" onClick={handleDeleteList}><FaTrash/></div>
+  const handleDeleteList = () => {
+    setEntrie({});
+    deleteList(data._id);
+    useDataUser(setLists);
+  };
+  return (
+    <>
+      <div className="entrie__container animate__animated animate__bounceInDown">
+        <div style={{width: "100%", height: '100%', display: 'flex', alignItems: 'center'}} onClick={handleClick}>
+          <div className="entrie__listname">{data.name}</div>
         </div>
-    )
-}
+        <div className="entrie__trash" onClick={handleDeleteList}>
+          <FaTrash />
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default EntrieCard
+export default EntrieCard;

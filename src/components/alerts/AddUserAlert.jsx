@@ -1,22 +1,19 @@
 import React, { useContext } from "react";
-import { useDataUser } from "../../helpers/UseDataUser";
 import { useInput } from "../../hooks/useInput";
-import { GetDataUser } from "../../services/auth.services";
-import { createNewList } from "../../services/lists.services";
-import ListsContext from "../contexts/ListsContext";
+import { addUserList } from "../../services/user.services";
+import EntrieContext from "../contexts/EntrieContext";
 
-const AddListAlert = ({ active }) => {
-  const { setLists } = useContext(ListsContext);
+const AddUserAlert = ({ active }) => {
+    const {entrie} = useContext(EntrieContext)
   const [value, handleChange, reset] = useInput({
-    name: "",
+    userEmail: "",
   });
 
-  const { name } = value;
+  const { userEmail } = value;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createNewList({ name: name });
-    useDataUser(setLists);
+    addUserList(userEmail, entrie._id)
     reset();
     active();
   };
@@ -27,18 +24,18 @@ const AddListAlert = ({ active }) => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            value={name}
+            value={userEmail}
             onChange={handleChange}
             autoComplete="off"
-            name="name"
-            placeholder="list name..."
+            name="userEmail"
+            placeholder="user email"
             className="input__default"
           />
           <div className="addListAlert__buttonContainer">
             <button type="button" className="buttons__danger" onClick={() => active()}>
               cancel
             </button>
-            <button className="buttons__success" type="submit">create</button>
+            <button className="buttons__success" type="submit">Add</button>
           </div>
         </form>
       </div>
@@ -46,4 +43,4 @@ const AddListAlert = ({ active }) => {
   );
 };
 
-export default AddListAlert;
+export default AddUserAlert;
