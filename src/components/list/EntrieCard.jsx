@@ -5,7 +5,7 @@ import { deleteList } from "../../services/lists.services";
 import EntrieContext from "../contexts/EntrieContext";
 import ListsContext from "../contexts/ListsContext";
 
-const EntrieCard = ({ data }) => {
+const EntrieCard = ({ data, deleteable }) => {
   const { setLists } = useContext(ListsContext);
   const { setEntrie } = useContext(EntrieContext);
   const handleClick = () => {
@@ -20,12 +20,22 @@ const EntrieCard = ({ data }) => {
   return (
     <>
       <div className="entrie__container animate__animated animate__bounceInDown">
-        <div style={{width: "100%", height: '100%', display: 'flex', alignItems: 'center'}} onClick={handleClick}>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+          }}
+          onClick={handleClick}
+        >
           <div className="entrie__listname">{data.name}</div>
         </div>
-        <div className="entrie__trash" onClick={handleDeleteList}>
-          <FaTrash />
-        </div>
+        {deleteable && (
+          <div className="entrie__trash" onClick={handleDeleteList}>
+            <FaTrash />
+          </div>
+        )}
       </div>
     </>
   );

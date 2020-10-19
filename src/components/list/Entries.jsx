@@ -16,12 +16,18 @@ const Entries = () => {
     <div>
       {!loading ? (
         <div className="entries__container">
-          <div>own lists</div>
-          {lists.listsAsAuthor &&
-            lists.listsAsAuthor.map((m) => <EntrieCard key={m._id} data={m} />)}
-          <div>other lists</div>
-          {lists.listsAsUser &&
-            lists.listsAsUser.map((m) => <EntrieCard key={m._id} data={m} />)}
+          {lists.listsAsAuthor && lists.listsAsAuthor.length > 0 &&
+          <>
+          <div className="entrie__entrieTipe animate__animated animate__bounceInUp">own lists</div>
+          <div>{lists.listsAsAuthor.map((m) => <EntrieCard key={m._id} data={m} deleteable={true}/>)}</div>
+          </>
+          }
+         
+          {lists.listsAsUser && lists.listsAsUser.length > 0 &&
+            <>
+            <div  className="entrie__entrieTipe animate__animated animate__bounceInUp">other lists</div>
+            <div>{lists.listsAsUser.map((m) => <EntrieCard key={m._id} data={m} />)}</div>
+            </>}
         </div>
       ) : (
         <div className="loading"></div>
