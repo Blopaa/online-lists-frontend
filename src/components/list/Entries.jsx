@@ -4,7 +4,7 @@ import LoadingContext from "../contexts/LoadingContext";
 import EntrieCard from "./EntrieCard";
 
 const Entries = () => {
-  const {lists, setLists} = useContext(ListsContext)
+  const { lists, setLists } = useContext(ListsContext);
   const { loading, setLoading } = useContext(LoadingContext);
   useEffect(() => {
     setLoading(true);
@@ -16,10 +16,12 @@ const Entries = () => {
     <div>
       {!loading ? (
         <div className="entries__container">
-          {lists && lists.listsAsAuthor &&
-            lists.listsAsAuthor.map((m) => (
-              <EntrieCard key={m._id} data={m} />
-            ))}
+          <div>own lists</div>
+          {lists.listsAsAuthor &&
+            lists.listsAsAuthor.map((m) => <EntrieCard key={m._id} data={m} />)}
+          <div>other lists</div>
+          {lists.listsAsUser &&
+            lists.listsAsUser.map((m) => <EntrieCard key={m._id} data={m} />)}
         </div>
       ) : (
         <div className="loading"></div>
