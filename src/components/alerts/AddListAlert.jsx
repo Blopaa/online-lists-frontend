@@ -35,10 +35,10 @@ const AddListAlert = ({ active }) => {
             className="input__default"
           />
           <div className="addListAlert__buttonContainer">
-            <button type="button" className="buttons__danger" onClick={() => active()}>
+            <button type="button" className="buttons__danger pointer" onClick={() => active()}>
               cancel
             </button>
-            <button className="buttons__success" type="submit">create</button>
+            <button className="buttons__success pointer" type="submit">create</button>
           </div>
         </form>
       </div>

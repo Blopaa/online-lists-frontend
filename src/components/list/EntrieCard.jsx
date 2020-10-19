@@ -19,7 +19,7 @@ const EntrieCard = ({ data, deleteable }) => {
   };
   return (
     <>
-      <div className="entrie__container animate__animated animate__bounceInDown">
+      <div className="entrie__container animate__animated animate__bounceInDown pointer">
         <div
           style={{
             width: "100%",
