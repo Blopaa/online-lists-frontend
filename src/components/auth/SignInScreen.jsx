@@ -45,8 +45,12 @@ const SignInScreen = () => {
       <div className="auth__container">
         <div>
           <h2 className="h2">Sign In</h2>
-          {error !== "" && <div className="error animate__animated animate__bounce">{error.message}</div>}
           <form className="auth__form" onSubmit={handleSubmit}>
+            {error !== "" && (
+              <div className="error animate__animated animate__bounce">
+                {error.message}
+              </div>
+            )}
             <input
               className="input__default"
               type="text"
