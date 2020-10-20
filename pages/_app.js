@@ -12,6 +12,8 @@ function MyApp({ Component, pageProps }) {
   const [entrie, setEntrie] = useState({});
   const [activeNewList, setActiveNewList] = useState(false);
   const [activeNewUser, setActiveNewUser] = useState(false)
+  const [activeNewProduct, setActiveNewProduct] = useState(false)
+  const [fields, setFields] = useState({})
   return (
     <>
       <Head>
@@ -23,8 +25,8 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <LoadingContext.Provider value={{ loading, setLoading }}>
         <ListsContext.Provider value={{ lists, setLists }}>
-          <EntrieContext.Provider value={{ entrie, setEntrie }}>
-            <AlertsContext.Provider value={{activeNewList, setActiveNewList, activeNewUser, setActiveNewUser}}>
+          <EntrieContext.Provider value={{ entrie, setEntrie, fields, setFields }}>
+            <AlertsContext.Provider value={{activeNewList, setActiveNewList, activeNewUser, setActiveNewUser, activeNewProduct, setActiveNewProduct}}>
               <Component {...pageProps} />
             </AlertsContext.Provider>
           </EntrieContext.Provider>

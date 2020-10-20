@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useDataUser } from "../../helpers/UseDataUser";
 import { useInput } from "../../hooks/useInput";
-import { GetDataUser } from "../../services/auth.services";
 import { createNewList } from "../../services/lists.services";
 import ListsContext from "../contexts/ListsContext";
 

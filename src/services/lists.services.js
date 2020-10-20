@@ -13,3 +13,9 @@ export const addProduct = async (id, posted) => {
     const header = document.cookie.split("=")
     await axios.put(`http://localhost:4000/api/lists/addproduct/${id}`, posted , {headers:{"auth-token":header[1]}})
 }
+
+export const getList = async (id) => {
+    const header = document.cookie.split("=")
+    const {data} = await axios.get(`http://localhost:4000/api/lists/${id}`, {headers:{"auth-token":header[1]}})
+    return data
+}

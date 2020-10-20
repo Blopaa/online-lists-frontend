@@ -86,3 +86,25 @@
   width: 310px;
   height: 22px;
 }
+
+.entrie-productCard__container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75rem;
+  background-color: $secondary;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.entrie-productCard__info{
+  width: 10rem;
+  display: flex;
+  color: $secondary;
+  background-color: $primary;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
