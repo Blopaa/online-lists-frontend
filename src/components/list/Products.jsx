@@ -8,7 +8,7 @@ const Products = () => {
     return (
         <div style={{overflowY: 'scroll', height: '37rem'}}>
             {fields.length > 0 && fields.map((m, i) => (
-                <ProductCard data={m} key={i}/>
+                <ProductCard data={m} id={i} key={i}/>
             ))}
         </div>
     )

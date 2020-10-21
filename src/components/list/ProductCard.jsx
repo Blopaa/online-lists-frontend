@@ -1,15 +1,38 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { deleteProduct } from "../../services/lists.services";
+import EntrieContext from "../contexts/EntrieContext";
+import { FaTrash } from "react-icons/fa";
 
-const ProductCard = ({data}) => {
-    return (
-        <div className="entrie-productCard__container animate__animated animate__bounceInDown">
-            <div style={{padding: "0px 20px"}}>{data.product}</div>
-            <div style={{padding: "0px 20px"}} className="entrie-productCard__info">
-                <div>{data.quantity}</div>
-                <div>{data.unit}</div>
-            </div>
+const ProductCard = ({ data, id }) => {
+  const { fields, setFields, entrie } = useContext(EntrieContext);
+  const handleCLick = () => {
+    const field = fields[id];
+    setFields(fields.filter((m) => m != field));
+    console.log(entrie._id);
+    console.log(fields);
+    setTimeout(() => {
+      deleteProduct(entrie._id, []);
+    }, 100);
+  };
+  return (
+    <div className="entries__containertwo animate__animated animate__bounceInDown">
+      <div
+        className="entrie-productCard__container"
+      >
+        <div style={{ padding: "0px 20px" }}>{data.product}</div>
+        <div
+          style={{ padding: "0px 20px" }}
+          className="entrie-productCard__info"
+        >
+          <div>{data.quantity}</div>
+          <div>{data.unit}</div>
         </div>
-    )
-}
+      </div>
+      <div className="pointer product__trash" onClick={handleCLick}>
+        <FaTrash />
+      </div>
+    </div>
+  );
+};
 
-export default ProductCard
+export default ProductCard;

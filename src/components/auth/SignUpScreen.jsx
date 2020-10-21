@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import { useInput } from "../../hooks/useInput";
 import Link from "next/link";
-import Router from "next/router"
-import { GetDataUser, SignUpUser } from "../../services/auth.services";
+import Router from "next/router";
+import { SignUpUser } from "../../services/auth.services";
 import LoadingContext from "../contexts/LoadingContext";
 import ListsContext from "../contexts/ListsContext";
 import { useDataUser } from "../../helpers/UseDataUser";
 
 const SignUpScreen = () => {
-  const {lists, setLists} = useContext(ListsContext)
-  const {loading, setLoading} = useContext(LoadingContext)
+  const { lists, setLists } = useContext(ListsContext);
+  const { loading, setLoading } = useContext(LoadingContext);
   const [value, handleChange, reset] = useInput({
     username: "",
     email: "",
@@ -17,19 +17,19 @@ const SignUpScreen = () => {
   });
 
   const { username, email, password } = value;
-  
+
   const handleSubmit = async (e) => {
-    setLoading(true)
     e.preventDefault();
-    SignUpUser({username, email, password});
+    setLoading(true);
+    SignUpUser({ username, email, password });
     reset();
-      setTimeout(() => {
-        useDataUser(setLists)
-      }, 1000)
     setTimeout(() => {
-      setLoading(false)
+      useDataUser(setLists);
+    }, 1000);
+    setTimeout(() => {
+      setLoading(false);
       Router.replace("/");
-    },1500)
+    }, 1500);
   };
 
   return (
@@ -65,13 +65,13 @@ const SignUpScreen = () => {
               autoComplete="off"
               placeholder="password"
             />
-            {
-              !loading ?
+            {!loading ? (
               <button className="buttons__auth-submit" type="submit">
-              submit
-            </button> :
-            <div className="loading"></div>
-            }
+                submit
+              </button>
+            ) : (
+              <div className="loading"></div>
+            )}
           </form>
           <hr />
         </div>

@@ -11,8 +11,8 @@ const EntrieScreen = ({active, active2}) => {
    <>
     <div className="entrie__screen">
       <div className="entrie__header"><div className="entrie__name">{entrie.name}</div><div className="entrie__addSomeone pointer" onClick={() => active()}>add someone</div></div>
-      <div>
-        <div className="sidebar__newEntrie pointer animate__animated animate__bounceInUp" onClick={() => active2()} style={{width: '75rem', height: '80px'}}><IoMdAddCircle style={{fontSize:"30px"}}/></div>
+      <div style={{display: 'flex', flexDirection: "column", alignItems: "center"}}>
+        <div className="sidebar__newEntrie pointer animate__animated animate__bounceInUp" onClick={() => active2()} style={{width: '75rem', height: '80px', marginRight: '0px'}}><IoMdAddCircle style={{fontSize:"30px"}}/></div>
           <Products/>
       </div>
     </div>

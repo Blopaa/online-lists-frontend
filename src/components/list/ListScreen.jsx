@@ -19,8 +19,10 @@ const ListScreen = () => {
   useEffect(() => {
     if (!document.cookie) {
       Router.replace("/signup");
+      return
+    }else{
+      useDataUser(setLists);
     }
-    useDataUser(setLists);
   }, []);
 
   const handleActiveNewList = () => {
