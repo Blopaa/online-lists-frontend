@@ -12,7 +12,7 @@ export const addUserList = async (userEmail, listId) => {
   let res;
   try {
     await axios.put(
-      `http://localhost:4000/api/lists/${userEmail}/${listId}`,
+      `http://localhost:4000/api/lists/adduser/${userEmail}/${listId}`,
       undefined,
       { headers: { "auth-token": header[1] } }
     );

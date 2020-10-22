@@ -37,9 +37,9 @@ const AddUserAlert = ({ active }) => {
   return (
     <div className="addListAlert__screen">
       <div onClick={() => active()} className="addListAlert__background"></div>
-      <div className="addListAlert__container animate__zoomInUp animate__animated ">
+      <div className="addListAlert__container animate__zoomInUp animate__animated threeh threew">
         {error.message && <div className="error" style={{width: "87%", height: "50px"}}>{error.message}</div>}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="ninew flex jcenter column ">
           <input
             type="text"
             value={userEmail}
@@ -47,7 +47,7 @@ const AddUserAlert = ({ active }) => {
             autoComplete="off"
             name="userEmail"
             placeholder="user email"
-            className="input__default"
+            className="input__default ninew"
           />
           <div className="addListAlert__buttonContainer">
             <button

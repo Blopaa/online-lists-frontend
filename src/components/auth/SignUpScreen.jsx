@@ -26,20 +26,20 @@ const SignUpScreen = () => {
     setTimeout(() => {
       useDataUser(setLists);
     }, 1000);
-    setTimeout(() => {
-      setLoading(false);
-      Router.replace("/");
+    setTimeout(async() => {
+      const data = await useDataUser(setLists);
+      Router.replace(`/${data.user._id}/${data.user.username}`);
     }, 1500);
   };
 
   return (
     <div className="auth__screen">
-      <div className="auth__container">
-        <div>
+      <div className="auth__container fourw fiveh">
+        <div className="ninew">
           <h2 className="h2">Sign Up</h2>
           <form className="auth__form" onSubmit={handleSubmit}>
             <input
-              className="input__default"
+              className="input__default eightw"
               type="text"
               value={username}
               onChange={handleChange}
@@ -48,7 +48,7 @@ const SignUpScreen = () => {
               placeholder="username"
             />
             <input
-              className="input__default"
+              className="input__default eightw"
               type="text"
               value={email}
               onChange={handleChange}
@@ -57,7 +57,7 @@ const SignUpScreen = () => {
               placeholder="email"
             />
             <input
-              className="input__default"
+              className="input__default eightw"
               type="password"
               value={password}
               onChange={handleChange}

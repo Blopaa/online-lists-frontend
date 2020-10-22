@@ -4,26 +4,28 @@ import { useInput } from "../../hooks/useInput";
 import { createNewList } from "../../services/lists.services";
 import ListsContext from "../contexts/ListsContext";
 
-const AddListAlert = ({ active }) => {
+const AddListAlert = ({ toggleModal }) => {
   const { setLists } = useContext(ListsContext);
-  const [value, handleChange, reset] = useInput({
+
+  const [{name}, handleChange, reset] = useInput({
     name: "",
   });
 
-  const { name } = value;
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     createNewList({ name: name });
     useDataUser(setLists);
+    
     reset();
-    active();
+    toggleModal();
   };
   return (
     <div className="addListAlert__screen">
-      <div  onClick={() => active()} className="addListAlert__background"></div>
-      <div className="addListAlert__container animate__zoomInUp animate__animated ">
-        <form onSubmit={handleSubmit}>
+      <div  onClick={toggleModal} className="addListAlert__background"></div>
+      <div className="addListAlert__container animate__zoomInUp animate__animated threeh threew flex column jcenter">
+        <form onSubmit={handleSubmit} className="ninew">
           <input
             type="text"
             value={name}
@@ -31,10 +33,14 @@ const AddListAlert = ({ active }) => {
             autoComplete="off"
             name="name"
             placeholder="list name..."
-            className="input__default"
+            className="input__default ninew"
           />
           <div className="addListAlert__buttonContainer">
-            <button type="button" className="buttons__danger pointer" onClick={() => active()}>
+            <button 
+              type="button" 
+              className="buttons__danger pointer" 
+              onClick ={toggleModal}
+              >
               cancel
             </button>
             <button className="buttons__success pointer" type="submit">create</button>

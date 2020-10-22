@@ -1,12 +1,14 @@
-import React from 'react'
-import ListScreen from '../src/components/list/ListScreen'
-import Navbar from '../src/components/list/navbar'
-export default function Home() {
+import Router from 'next/router'
+import React, { useEffect } from 'react'
 
+export default function Home() {
+  useEffect(() => {
+    
+    Router.replace('/signin')
+    
+  }, [])
   return (
-    <div>
-      <Navbar/>
-      <ListScreen/>
-    </div>
+    <>
+    </>
   )
 }

@@ -27,26 +27,27 @@ const AddProductAlert = ({ active }) => {
   };
   return (
     <div className="addListAlert__screen">
-      <div onClick={() => active()} className="addListAlert__background"></div>
-      <div className="addListAlert__container animate__zoomInUp animate__animated " style={{height: "30rem"}}>
-        <form onSubmit={handleSubmit} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
+      <div onClick={active} className="addListAlert__background"></div>
+      <div className="addListAlert__container animate__zoomInUp animate__animated fourh">
+        <form onSubmit={handleSubmit} className="eightw flex column jcenter">
           <input
             type="text"
             value={product}
             onChange={handleChange}
             autoComplete="off"
             name="product"
-            placeholder="list name..."
+            placeholder="product name..."
             className="input__default"
           />
+          <div className="spaceb">
           <input
             type="text"
             value={quantity}
             onChange={handleChange}
             autoComplete="off"
             name="quantity"
-            placeholder="list name..."
-            className="input__default"
+            placeholder="quantity..."
+            className="input__default sixw"
           />
           <input
             type="text"
@@ -54,14 +55,15 @@ const AddProductAlert = ({ active }) => {
             onChange={handleChange}
             autoComplete="off"
             name="unit"
-            placeholder="list name..."
-            className="input__default"
+            placeholder="unit..."
+            className="input__default onew"
           />
+          </div>
           <div className="addListAlert__buttonContainer">
             <button
               type="button"
               className="buttons__danger pointer"
-              onClick={() => active()}
+              onClick={() =>active()}
             >
               cancel
             </button>

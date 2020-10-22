@@ -42,7 +42,93 @@
   .dp{
     display: none;
   }
+
+  .onehw{
+    width: 100%
+  }
+  .ninew{
+    width: 90%
+  }
+  .eightw{
+    width: 80%
+  }
+  .sevenw{
+    width: 70%
+  }
+  .sixw{
+    width: 60%
+  }
+  .fivew{
+    width: 50%
+  }
+  .fourw{
+    width: 40%
+  }
+  .threew{
+    width: 30%
+  }
+  .twow{
+    width: 20%
+  }
+  .onew{
+    width: 10%
+  }
+
+  .onehh{
+    height: 100%
+  }
+  .nineh{
+    height: 90%
+  }
+  .eighth{
+    height: 80%
+  }
+  .sevenh{
+    height: 70%
+  }
+  .sixh{
+    height: 60%
+  }
+  .fiveh{
+    height: 50%
+  }
+  .fourh{
+    height: 40%
+  }
+  .threeh{
+    height: 30%
+  }
+  .twoh{
+    height: 20%
+  }
+  .oneh{
+    height: 10%
+  }
+
+  .jcenter{
+    display: flex;
+    justify-content: center;
+  }
+
+  .flex{
+    display: flex;
+  }
+
+  .acenter{
+    display: flex;
+    align-items: center;
+  }
   
+  .column{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .spaceb{
+    display: flex;
+    justify-content: space-between;
+  }
+
   ::-webkit-scrollbar {
     width: 10px;
   }

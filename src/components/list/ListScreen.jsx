@@ -18,7 +18,7 @@ const ListScreen = () => {
   const { entrie } = useContext(EntrieContext);
   useEffect(() => {
     if (!document.cookie) {
-      Router.replace("/signup");
+      Router.replace("/signin");
       return
     }else{
       useDataUser(setLists);
@@ -38,7 +38,7 @@ const ListScreen = () => {
 
   return (
     <div className="list__screen">
-      {activeNewList && <AddListAlert active={handleActiveNewList} />}
+      {activeNewList && <AddListAlert toggleModal={handleActiveNewList} />}
       {activeNewUser && <AddUserAlert active={handleActiveNewUser}/>}
       {activeNewProduct && <AddProductAlert active={handleActiveNewProduct}/>}
       <Sidebar active={handleActiveNewList} />
