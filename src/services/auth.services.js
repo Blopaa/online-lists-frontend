@@ -1,6 +1,6 @@
 import axios from 'axios'
 export const SignUpUser = async (posted) => {
-    const {data} = await axios.post(`${process.env.NEXT_PUBLIC_API}/api/users/signup`, posted)
+    const {data} = await axios.post(`https://online-lists.herokuapp.com/api/users/signup`, posted)
     document.cookie = `auth-token=${data.token}`
     return data
 }
@@ -8,7 +8,7 @@ export const SignUpUser = async (posted) => {
 export const SignInUser = async (posted) => {
     let res; 
    try {
-    const {data} = await axios.post(`${process.env.NEXT_PUBLIC_API}/api/users/signIn`, posted)
+    const {data} = await axios.post(`https://online-lists.herokuapp.com/api/users/signIn`, posted)
     document.cookie = `auth-token=${data.token}`
     res = data.token
    } catch (err) {
@@ -24,6 +24,6 @@ export const SignInUser = async (posted) => {
 
 export const GetDataUser = async () => {
     const header = document.cookie.split("=")
-    const {data} = await axios.get(`${process.env.NEXT_PUBLIC_API}/api/users`, {headers:{"auth-token":header[1]}})
+    const {data} = await axios.get(`https://online-lists.herokuapp.com/api/users`, {headers:{"auth-token":header[1]}})
     return data
 }

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const deleteList = async (id) => {
   const header = document.cookie.split("=");
-  await axios.delete(`${process.env.NEXT_PUBLIC_API}/api/lists/${id}`, {
+  await axios.delete(`https://online-lists.herokuapp.com/api/lists/${id}`, {
     headers: { "auth-token": header[1] },
   });
 };
@@ -12,7 +12,7 @@ export const addUserList = async (userEmail, listId) => {
   let res;
   try {
     await axios.put(
-      `${process.env.NEXT_PUBLIC_API}/api/lists/adduser/${userEmail}/${listId}`,
+      `https://online-lists.herokuapp.com/api/lists/adduser/${userEmail}/${listId}`,
       undefined,
       { headers: { "auth-token": header[1] } }
     );
