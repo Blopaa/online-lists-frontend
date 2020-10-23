@@ -4,8 +4,10 @@ import { useDataUser } from "../../helpers/UseDataUser";
 import { deleteList, getList } from "../../services/lists.services";
 import EntrieContext from "../contexts/EntrieContext";
 import ListsContext from "../contexts/ListsContext";
+import LoadingContext from "../contexts/LoadingContext";
 
 const EntrieCard = ({ data, deleteable }) => {
+  const {setLoading} = useContext(LoadingContext)
   const { setLists } = useContext(ListsContext);
   const { setEntrie, setFields } = useContext(EntrieContext);
   const handleClick = () => {
@@ -18,10 +20,14 @@ const EntrieCard = ({ data, deleteable }) => {
   };
 
   const handleDeleteList = () => {
-    setEntrie({});
-    setFields({})
+    setLoading(true)
     deleteList(data._id);
     useDataUser(setLists);
+    setEntrie({});
+    setFields({});
+    setTimeout(() => [
+      setLoading(false)
+    ], 200)
   };
   return (
     <>

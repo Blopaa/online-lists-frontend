@@ -16,7 +16,9 @@ const AddListAlert = ({ toggleModal }) => {
     e.preventDefault();
 
     createNewList({ name: name });
-    useDataUser(setLists);
+    setTimeout(() => {
+      useDataUser(setLists);
+    }, 100)
     
     reset();
     toggleModal();

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const deleteList = async (id) => {
   const header = document.cookie.split("=");
-  await axios.delete(`http://localhost:4000/api/lists/${id}`, {
+  await axios.delete(`${process.env.NEXT_PUBLIC_API}/api/lists/${id}`, {
     headers: { "auth-token": header[1] },
   });
 };
@@ -12,7 +12,7 @@ export const addUserList = async (userEmail, listId) => {
   let res;
   try {
     await axios.put(
-      `http://localhost:4000/api/lists/adduser/${userEmail}/${listId}`,
+      `${process.env.NEXT_PUBLIC_API}/api/lists/adduser/${userEmail}/${listId}`,
       undefined,
       { headers: { "auth-token": header[1] } }
     );
