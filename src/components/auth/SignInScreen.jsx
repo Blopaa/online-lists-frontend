@@ -53,7 +53,7 @@ const SignInScreen = () => {
 
   return (
     <div className="auth__screen">
-      <div className="auth__container fiveh fivew">
+      <div className="auth__container fourh fourw  animate__animated animate__fadeIn animate__faster">
         <div className="ninew">
           <h2 className="h2">Sign In</h2>
           <form className="auth__form onehw flex jcenter" onSubmit={handleSubmit}>

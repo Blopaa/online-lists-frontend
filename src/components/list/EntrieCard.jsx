@@ -10,6 +10,7 @@ const EntrieCard = ({ data, deleteable }) => {
   const { setEntrie, setFields } = useContext(EntrieContext);
   const handleClick = () => {
     setEntrie(data);
+    setFields({})
     setTimeout(async () => {
       const newList = await getList(data._id)
       setFields(newList.fields)

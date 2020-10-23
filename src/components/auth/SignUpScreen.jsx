@@ -33,8 +33,8 @@ const SignUpScreen = () => {
   };
 
   return (
-    <div className="auth__screen">
-      <div className="auth__container fourw fiveh">
+    <div className="auth__screen ">
+      <div className="auth__container fourw fiveh  animate__animated animate__fadeIn animate__faster">
         <div className="ninew">
           <h2 className="h2">Sign Up</h2>
           <form className="auth__form" onSubmit={handleSubmit}>

@@ -23,7 +23,7 @@ const AddProductAlert = ({ active }) => {
       setFields(newList.fields)
       console.log(fields);
       console.log(newList);
-    }, 100)
+    }, 400)
   };
   return (
     <div className="addListAlert__screen">
