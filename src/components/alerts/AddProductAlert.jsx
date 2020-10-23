@@ -15,7 +15,7 @@ const AddProductAlert = ({ active }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    addProduct(entrie._id, {product, quantity, doit: false, unit});
+    addProduct(entrie._id, {product, quantity, unit});
     reset();
     active();
     setTimeout(async() => {

@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
-import AddUserAlert from "../alerts/AddUserAlert";
+import React, { useContext } from "react";
 import EntrieContext from "../contexts/EntrieContext";
 import Products from "./Products";
 import { IoMdAddCircle } from "react-icons/io";
 
 const EntrieScreen = ({ active, active2 }) => {
-  const { entrie, setEntrie } = useContext(EntrieContext);
+  const { entrie } = useContext(EntrieContext);
 
   return (
     <>

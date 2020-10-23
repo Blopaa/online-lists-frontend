@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { deleteProduct } from "../../services/lists.services";
 import EntrieContext from "../contexts/EntrieContext";
 import { FaTrash } from "react-icons/fa";
@@ -10,10 +10,11 @@ const ProductCard = ({ data, id }) => {
     setFields(fields.filter((m) => m != field));
     console.log(entrie._id);
     console.log(fields);
-    setTimeout(() => {
-      deleteProduct(entrie._id, []);
-    }, 100);
   };
+
+  useEffect(() => {
+    deleteProduct(entrie._id, fields);
+  }, [fields])
   return (
     <div className="entries__containertwo animate__animated animate__bounceInDown">
       <div
