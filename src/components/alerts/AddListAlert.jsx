@@ -24,7 +24,7 @@ const AddListAlert = ({ toggleModal }) => {
   return (
     <div className="addListAlert__screen">
       <div  onClick={toggleModal} className="addListAlert__background"></div>
-      <div className="addListAlert__container animate__zoomInUp animate__animated threeh threew flex column jcenter">
+      <div className="addListAlert__container animate__zoomInUp animate__animated threeh fivew flex column jcenter">
         <form onSubmit={handleSubmit} className="ninew">
           <input
             type="text"

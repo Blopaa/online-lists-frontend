@@ -37,7 +37,7 @@ const AddProductAlert = ({ active }) => {
             autoComplete="off"
             name="product"
             placeholder="product name..."
-            className="input__default"
+            className="input__default big"
           />
           <div className="spaceb">
           <input
@@ -56,7 +56,7 @@ const AddProductAlert = ({ active }) => {
             autoComplete="off"
             name="unit"
             placeholder="unit..."
-            className="input__default onew"
+            className="input__default onew mini"
           />
           </div>
           <div className="addListAlert__buttonContainer">

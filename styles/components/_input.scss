@@ -7,7 +7,7 @@
   transition: 0.2s ease-in-out;
     margin-bottom: 20px;
     font-size: 18px;
-    padding: 0rem 1.5rem;
+    padding: 0rem 5%;
 
   &::placeholder {
     color: darken($color: $secondary, $amount: 30);
@@ -19,5 +19,16 @@
   }
   &:focus {
     background-color: darken($color: $secondary, $amount: 13);
+  }
+}
+
+@media(max-width: 768px){
+
+  .mini{
+    width: 10%;
+  }
+
+  .big{
+    width: 90%;
   }
 }
