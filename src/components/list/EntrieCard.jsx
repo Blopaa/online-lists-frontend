@@ -27,7 +27,7 @@ const EntrieCard = ({ data, deleteable }) => {
     setFields({});
     setTimeout(() => [
       setLoading(false)
-    ], 200)
+    ], 200 )
   };
   return (
     <>
