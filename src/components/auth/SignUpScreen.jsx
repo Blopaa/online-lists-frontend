@@ -21,15 +21,18 @@ const SignUpScreen = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    SignUpUser({ username, email, password });
+    const result = await SignUpUser({ username, email, password });
     reset();
-    setTimeout(() => {
-      useDataUser(setLists);
-    }, 1000);
-    setTimeout(async() => {
-      const data = await useDataUser(setLists);
-      Router.replace(`/${data.user._id}/${data.user.username}`);
-    }, 1500);
+    console.log(result)
+    if (result.status === 200) {
+      setTimeout(() => {
+        useDataUser(setLists);
+      }, 1000);
+      setTimeout(async () => {
+        const data = await useDataUser(setLists);
+        Router.replace(`/${data.user._id}/${data.user.username}`);
+      }, 1500);
+    }
   };
 
   return (
