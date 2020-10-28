@@ -1,16 +1,27 @@
 import axios from 'axios'
 export const SignUpUser = async (posted) => {
-    const {data} = await axios.post(`https://online-lists.herokuapp.com/api/users/signup`, posted)
+     let res; 
+   try {
+    const {data, status} = await axios.post(`https://online-lists.herokuapp.com/api/users/signup`, posted)
     document.cookie = `auth-token=${data.token}`
-    return data
+    res = {data, status}
+   } catch (err) {
+       const {status} = err.response
+       const {message} = err.response.data
+       console.log(message)
+       res = {status, message}
+   }finally {
+       console.log(res)
+       return res
+   }
 }
 
 export const SignInUser = async (posted) => {
     let res; 
    try {
-    const {data} = await axios.post(`https://online-lists.herokuapp.com/api/users/signIn`, posted)
+    const {data, status} = await axios.post(`https://online-lists.herokuapp.com/api/users/signIn`, posted)
     document.cookie = `auth-token=${data.token}`
-    res = data.token
+    res = {data, status}
    } catch (err) {
        const {status} = err.response
        const {message} = err.response.data
