@@ -13,7 +13,7 @@ const Entries = () => {
     }, 1200);
   }, []);
   return (
-    <div className="onehw flex jcenter">
+    <div className="onehw flex jcenter entries__main__container">
       {!loading ? (
         <div className="entries__container">
           {lists.listsAsAuthor && lists.listsAsAuthor.length > 0 && (
