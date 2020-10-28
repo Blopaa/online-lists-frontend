@@ -32,16 +32,14 @@ const SignInScreen = () => {
     setLoading(true);
     e.preventDefault();
 
-    const userSignToken = await SignInUser({ email, password });
+    const result = await SignInUser({ email, password });
 
-    if (typeof userSignToken === "string") {
+    if (result.status === 200) {
       setTimeout(async () => {
         const data = await useDataUser(setLists);
         Router.replace(`/${data.user._id}/${data.user.username}`);
       }, 400);
-    }
-
-    if (typeof userSignToken !== "string") {
+    }else{
       setTimeout(() => {
         setError(userSignToken);
         setLoading(false);
@@ -97,7 +95,7 @@ const SignInScreen = () => {
           <hr />
         </div>
         <div className="auth__changeAuth">
-          you don't have an account? <Link href="/signup">Sign Up</Link>
+          you don't have an account? <Link href="/signup"><a>Sign Up</a></Link>
         </div>
       </div>
     </div>

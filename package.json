@@ -1,7 +1,6 @@
 {
   "name": "online-list-frontend",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
-    "next": "9.5.5",
+    "next": "^9.4.4",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-icons": "^3.11.0",
