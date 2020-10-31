@@ -22,6 +22,7 @@ export const getList = async (id) => {
 
 export const deleteProduct = async (id, posted) => {
     const header = document.cookie.split("=")
+    console.log(posted)
     const {data} = await axios.put(`https://online-lists.herokuapp.com/api/lists/product/${id}`, posted, {headers:{"auth-token":header[1]}})
     return data
 }

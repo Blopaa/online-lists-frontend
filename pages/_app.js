@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
   const [activeNewList, setActiveNewList] = useState(false);
   const [activeNewUser, setActiveNewUser] = useState(false)
   const [activeNewProduct, setActiveNewProduct] = useState(false)
-  const [fields, setFields] = useState({})
+  const [fields, setFields] = useState([])
   return (
     <>
       <Head>

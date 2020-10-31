@@ -41,7 +41,7 @@ const SignInScreen = () => {
       }, 400);
     }else{
       setTimeout(() => {
-        setError(userSignToken);
+        setError(result);
         setLoading(false);
       }, 200);
     }
@@ -51,12 +51,12 @@ const SignInScreen = () => {
 
   return (
     <div className="auth__screen">
-      <div className="auth__container fourh fourw  animate__animated animate__fadeIn animate__faster">
+      <div className="auth__container fiveh fourw  animate__animated animate__fadeIn animate__faster">
         <div className="ninew">
           <h2 className="h2">Sign In</h2>
           <form className="auth__form onehw flex jcenter" onSubmit={handleSubmit}>
             {error !== "" && (
-              <div className="error animate__animated animate__bounce">
+              <div className="error animate__animated animate__bounce p-1 onehw">
                 {error?.message}
               </div>
             )}

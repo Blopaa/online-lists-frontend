@@ -4,7 +4,6 @@ import ProductCard from './ProductCard';
 
 const Products = () => {
     const {fields} = useContext(EntrieContext)
-    console.log(fields);
     return (
         <div style={{overflowY: 'scroll', height: '37rem'}} className="flex column eightw">
             {fields.length > 0 && fields.map((m, i) => (

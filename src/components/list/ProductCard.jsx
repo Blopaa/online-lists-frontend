@@ -8,13 +8,10 @@ const ProductCard = ({ data, id }) => {
   const handleCLick = () => {
     const field = fields[id];
     setFields(fields.filter((m) => m != field));
-    console.log(entrie._id);
-    console.log(fields);
   };
 
-  useEffect(() => {
-    deleteProduct(entrie._id, fields);
-  }, [fields])
+  deleteProduct(entrie._id, fields)
+
   return (
     <div className="entries__containertwo animate__animated animate__bounceInDown">
       <div
