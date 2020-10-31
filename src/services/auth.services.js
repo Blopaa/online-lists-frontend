@@ -3,7 +3,7 @@ export const SignUpUser = async (posted) => {
      let res; 
    try {
     const {data, status} = await axios.post(`https://online-lists.herokuapp.com/api/users/signup`, posted)
-    document.cookie = `auth-token=${data.token}`
+    document.cookie = `auth-token=${data.token}; path=/`
     res = {data, status}
    } catch (err) {
        const {status} = err.response
@@ -20,7 +20,7 @@ export const SignInUser = async (posted) => {
     let res; 
    try {
     const {data, status} = await axios.post(`https://online-lists.herokuapp.com/api/users/signIn`, posted)
-    document.cookie = `auth-token=${data.token}`
+    document.cookie = `auth-token=${data.token}; path=/`
     res = {data, status}
    } catch (err) {
        const {status} = err.response

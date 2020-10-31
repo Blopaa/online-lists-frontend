@@ -6,7 +6,7 @@ const Navbar = () => {
   const { lists } = useContext(ListsContext);
 
   const handleLogout = () => {
-    document.cookie = "auth-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    document.cookie = "auth-token=;path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
     Router.replace("/signin");
   };
   return (
