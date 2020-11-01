@@ -23,7 +23,7 @@ const SignUpScreen = () => {
     setLoading(true);
     const result = await SignUpUser({ username, email, password });
     reset();
-    console.log(result)
+     (result)
     if (result.status === 200) {
       setTimeout(() => {
         useDataUser(setLists);

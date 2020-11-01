@@ -36,7 +36,7 @@ const AddUserAlert = ({ active }) => {
   };
   return (
     <div className="addListAlert__screen">
-      <div onClick={() => active()} className="addListAlert__background"></div>
+      <div onClick={() => active()} className="addListAlert__background pointer"></div>
       <div className="addListAlert__container animate__zoomInUp animate__animated threeh fivew">
         {error.message && <div className="error" style={{width: "87%", height: "50px"}}>{error.message}</div>}
         <form onSubmit={handleSubmit} className="ninew flex jcenter column ">

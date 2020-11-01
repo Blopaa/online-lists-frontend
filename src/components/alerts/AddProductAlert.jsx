@@ -21,13 +21,11 @@ const AddProductAlert = ({ active }) => {
     setTimeout(async() => {
       const newList = await getList(entrie._id)
       setFields(newList.fields)
-      console.log(fields);
-      console.log(newList);
     }, 400)
   };
   return (
     <div className="addListAlert__screen">
-      <div onClick={active} className="addListAlert__background"></div>
+      <div onClick={active} className="addListAlert__background pointer"></div>
       <div className="addListAlert__container animate__zoomInUp animate__animated fourh">
         <form onSubmit={handleSubmit} className="eightw flex column jcenter">
           <input

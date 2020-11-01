@@ -7,11 +7,14 @@ const ProductCard = ({ data, id }) => {
   const { fields, setFields, entrie } = useContext(EntrieContext);
   const handleCLick = () => {
     const field = fields[id];
-    setFields(fields.filter((m) => m != field));
+    const filtrate = fields.filter((m) => m != field)
+    deleteProduct(entrie._id, filtrate);
+    setFields(filtrate);
   };
 
-  deleteProduct(entrie._id, fields)
-
+  useEffect(() => {
+    
+  }, [fields])
   return (
     <div className="entries__containertwo animate__animated animate__bounceInDown">
       <div
