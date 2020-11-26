@@ -1,7 +1,9 @@
 .loading {
   margin: 10px;
   width: 70px;
+  min-width: 70px;
   height: 70px;
+  min-height: 70px;
   border: 10px solid $primary;
   border-radius: 50%;
   border-top: 10px solid $secondary;
